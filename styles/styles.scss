@@ -1,0 +1,410 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Serif TC', serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap ;
+
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: white;
+    //box-shadow: 3px 3px 5px 1px #757474;
+
+    div.logo{
+        display: flex;
+        align-items: center;
+        flex: 5 1 400px;
+        margin-left: 2rem;
+        img{
+            width: 6vw;
+            height: 6vw;
+        }
+    }
+
+    nav{
+        flex: 2 1 400px;
+        ul{
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            
+            li{
+                a{
+                    color: #09777d;
+                    text-decoration: none;
+                    font-size: 1.35rem;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px){
+    header{
+        div.logo{
+            margin-left: 0.5rem;
+            img{
+                width: 15vw;
+                height: 15vw;
+            }
+        }
+    }
+}
+
+main{
+    section.backImage{
+        min-height: 90vh;
+        width: 100%;
+        background-image: url(../pictures/pexels-photo-416676.jpeg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        
+        h3{
+            color: white;
+            font-size: 3.5rem;
+            margin: 2rem 0rem; // 讓文字與按鈕-現在開始隔開一點
+        }
+
+        button.start{
+            background-color: #3bf0e5;
+            padding: 0.75rem 1.5rem; // 讓按鈕-現在開始可以向外擴張，撐比較大
+            font-size: 1.5rem;
+            color: white;
+            border: none; // 可以去除邊框預設的凹槽效果
+            border-radius: 1rem;
+            cursor: pointer; // CSS 語法「cursor 屬性」改變滑鼠游標的形狀
+
+        }
+
+        div.filter{
+           background-color: rgba(0, 0, 0, 0.2);
+           min-height: 90vh;
+           width: 100%;
+           position: absolute;
+           top: 0;
+           z-index: -1;
+        }
+    }
+
+    section.second{
+        // min-height: 100vh; //這個效果單打看不出來，如果有下面的程式，可以發現min-height與section class="backImage"會有距離
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2{
+            font-size: 2rem;
+            margin: 2rem 0rem;
+        }
+
+        section.cards{
+            display: flex;
+            // border: 2px solid red; //設定border是為了明確知道cards的範圍在哪邊
+            width: 80%; // border的寬度佔網頁頁面的80%
+            min-height: 80vh;
+            flex-wrap: wrap; // 換置，版面不夠時，最右邊的會往下排
+
+            div.card{
+                // border: 2px solid blue;
+                display: flex; // 設定後會變成水平
+                flex-direction: column; // 改成垂直
+                align-items: center; // 文字置中
+                justify-content: space-around; // 水平分散
+                padding: 1rem;
+                flex: 1 1 300px;
+
+                div.image-container{
+                    overflow: hidden;
+                    width: 15vw;
+                    height: 15vw;
+                    border-radius: 50%;
+
+                    img{
+                        width: 15vw;
+                        height: 15vw; // 將圖片的長寬固定
+                        border-radius: 50%; // 將圖片的設成圓形
+                        // margin: 1rem 0;
+                        transition: all 0.2s;
+
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+                
+                h4{
+                    font-size: 2rem;
+                    margin: 1rem 0; 
+                }
+
+                p{
+                    font-size: 1.25rem;
+                }
+
+                a{
+                    text-decoration: none; // 去除運送地點等連線設定的底線
+                    padding: 1rem 1.5rem; // 預設不知道多少，輸入後，間距縮小
+                    background-color: #09777d;
+                    color: white;
+                    font-size: 1.25rem;
+                    margin: 1rem 0;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 40vh;
+    justify-content: space-around;
+    background-color: rgb(207, 207, 207);
+
+    div.logo{
+        display: flex;
+        align-items: center;
+        
+        img{
+            height: 6vw;
+            width: 6vw;
+        }
+    }
+
+    nav{
+        width: 30%;
+
+        ul{
+            display: flex;
+            list-style-type: none;
+            width: 100%;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            li{
+                a{
+                    color: white;
+                    font-weight: 600;
+                    text-decoration: none;
+                    font-size: 1.35rem;
+                    flex-basis: 100px;
+                }
+            }
+        }
+    }
+
+    section.links{
+        a{
+            margin: 0rem 1rem;
+            
+            img{
+                width: 5vw;
+                height: 5vw; 
+            }
+        }
+    }
+}
+
+
+    @media screen and (max-width: 700px){
+        main{
+            section-second{
+                section-cards{
+                    div.card{
+                        img{
+                            width: 40vw;
+                            height: 40vw;
+                        }
+                    }
+                }
+            }
+        }   
+    }
+
+    @media screen and (max-width: 550px){
+        header{
+            div.logo{
+                margin-left: 0.5rem;
+
+                img{
+                    width: 15vw;
+                    height: 15vw;
+                }
+
+            }
+
+        }
+
+        footer{
+            div.loge{
+                img{
+                    width: 15vw;
+                    height: 15vw;
+                }
+            }
+            section.links{
+                margin-top: 1rem;
+                a{
+                    img{
+                        width: 10vw;
+                        height: 10vw;
+                    }
+                }
+            }
+        }
+    }
+
+    .content{
+        display: flex;
+        flex-wrap: wrap;
+        .banner{
+            width: 20%;
+            text-align: center;
+            flex-direction: column;
+            align-items: center; // 文字置中
+            justify-content: space-around; // 水平分散
+            padding: 0.5rem;
+            flex: 1 200px;
+
+            .flag{
+                margin: 10px;
+                display: block;
+            }
+
+            .seal{
+                margin: 35px;
+                display: block;
+            }
+        }
+        
+        .word{
+            width: 80%;
+            padding: 5px;
+            text-align: right;
+            p{
+                text-align: left;
+                color: yellow;
+                font-size: 1rem;
+                
+            }
+        }
+    }
+
+    input, select, textarea, label{
+        cursor: pointer;
+    }
+
+    form.login{
+        text-align: center;
+        // color: #09777d;
+
+        caption{
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+        
+        th{
+            width: 35%;
+            font-size: 1.5rem;
+            text-align: right;
+            padding-bottom: 7px;
+            padding-right: 10px;
+        }
+
+        td{
+            width: 65%;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            width: 300px;
+            height: 50px;
+            font-size: 20px;
+        // ::placeholder{
+        //     font-size: 30px;
+        // }
+        }
+    }
+        
+    .loginbtn, .contactbtn{
+        text-align: center;
+
+        input[type]{
+            width: 180px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 3px solid #09777d;
+            padding: 10px;
+            margin: 40px 10px ;
+            border-radius: 10px;
+            transition: all 0.2s;
+
+            &:hover{
+                opacity: 0.8;
+                color: red;
+                font-size: 20px;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    // .loginbtn input:hover, 
+    // .contactbtn input:hover{
+    //     opacity: 0.8;
+    //     color: red;
+    //     font-size: 20px;
+    //     transform: scale(1.2);
+    // }
+
+    form.contact{
+        text-align: center;
+        
+        p{
+            margin-bottom: 10px;
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+
+        tr{
+            padding-bottom: 10px;
+        }
+
+        input[type="text"]{
+            margin: 10px;
+            width: 320px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        textarea{
+            margin: 10px;
+            width: 320px;
+            height: 150px;
+            font-size: 20px;
+        } 
+    }
+
+    

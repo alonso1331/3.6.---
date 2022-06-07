@@ -7,16 +7,16 @@ window.addEventListener("scroll", () =>{
     }
 });
 
-// function atention(){
-//     document.getElementById("btn").onclick = function (){
-//         window.alert("您確定送出？");
-//     };
-// };
-// atention();
-
 function atention(){
     document.getElementById("btn").onclick = function (){
-        window.alert("我們將盡速為您處理");
+        window.confirm("您確定送出？");
     };
 };
 atention();
+
+// function atention(){
+//     document.getElementById("btn").onclick = function (){
+//         window.alert("我們將盡速為您處理");
+//     };
+// };
+// atention();
